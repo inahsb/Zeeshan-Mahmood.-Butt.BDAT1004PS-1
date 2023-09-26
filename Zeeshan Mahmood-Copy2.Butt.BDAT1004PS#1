@@ -1,0 +1,774 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "88db6a92",
+   "metadata": {},
+   "source": [
+    "# Question 1"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "07d81b87",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "<class 'int'>\n",
+      "<class 'float'>\n",
+      "<class 'bool'>\n",
+      "<class 'int'>\n",
+      "<class 'int'>\n",
+      "<class 'str'>\n",
+      "<class 'str'>\n",
+      "<class 'float'>\n",
+      "<class 'int'>\n",
+      "<class 'set'>\n",
+      "<class 'bool'>\n",
+      "<class 'float'>\n"
+     ]
+    }
+   ],
+   "source": [
+    "print (type(5))\n",
+    "print(type(5.0))  \n",
+    "print(type(5 > 1))  \n",
+    "print(type(5))  \n",
+    "print(type(5 * 2))  \n",
+    "print(type('5' * 2))  \n",
+    "print(type('5' + '2'))  \n",
+    "print(type(5 / 2))  \n",
+    "print(type(5 % 2))  \n",
+    "print(type({5, 2, 1}))  \n",
+    "print(type(5 == 3))  \n",
+    "import math\n",
+    "print(type(math.pi))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "06d3dafd",
+   "metadata": {},
+   "source": [
+    "# Question 2"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "687d2490",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "How many letters are there in 'Supercalifragilisticexpialidocious'?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "6ef5d572",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "34\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(len(\"Supercalifragilisticexpialidocious\"))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "c9a6b4c7",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "Does 'Supercalifragilisticexpialidocious' contain 'ice' as a substring?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "da4a272f",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "True\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(\"ice\"in(\"Supercalifragilisticexpialidocious\") )"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "id": "a17e4e37",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "The longest word from the bunch is or Bababadalgharaghtakamminarronnkonn\n"
+     ]
+    }
+   ],
+   "source": [
+    "strings = [\"Supercalifragilisticexpialidocious\",\"Honorificabilitudinitatibus\",\"or Bababadalgharaghtakamminarronnkonn\"]\n",
+    "longest_word = \"\"\n",
+    "for x in strings:\n",
+    "    if(len(x)>len(longest_word)):\n",
+    "        longest_word = x\n",
+    "print(\"The longest word from the bunch is \" + longest_word)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "84f93059",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "Which composer comes first in the dictionary: 'Berlioz', 'Borodin', 'Brian', 'Bartok', 'Bellini', 'Buxtehude', 'Bernstein'. \n",
+    "Which one comes last?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "bc6e80fb",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "strings = ['Berlioz', 'Borodin', 'Brian','Bartok', 'Bellini', 'Buxtehude', 'Bernstein']\n",
+    "strings = sorted(strings)\n",
+    "print(strings)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "0fd334e5",
+   "metadata": {},
+   "source": [
+    "# Question 3"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "f93a9d74",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "Implement function triangleArea(a,b,c) that takes as input the lengths of the 3 sides of a triangle\n",
+    "and returns the area of the triangle. By Heron's formula, the area of a triangle with side lengths a, b, and c is , where .\n",
+    "  s(s-a)(s-b)(s-c)\n",
+    "  s=(a+b+c)/2\n",
+    ">>> triangleArea(2,2,2)\n",
+    "1.7320508075688772"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 20,
+   "id": "37d4aab7",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "1.7320508075688772\n"
+     ]
+    }
+   ],
+   "source": [
+    "import math\n",
+    "def triangleArea(a, b, c):\n",
+    "    s = (a + b + c) / 2\n",
+    "    area = math.sqrt(s * (s - a) * (s - b) * (s - c))\n",
+    "    return area\n",
+    "    result = triangleArea('2', '2', '2',)\n",
+    "print(result)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "975613a0",
+   "metadata": {},
+   "source": [
+    "# Question 4"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "3f4cd9e8",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "Write a program in python to separate odd and even integers in separate arrays. Go to the editor\n",
+    "Test Data :\n",
+    "Input the number of elements to be stored in the array :5\n",
+    "Input 5 elements in the array :\n",
+    "element - 0 : 25\n",
+    "element - 1 : 47\n",
+    "element - 2 : 42\n",
+    "element - 3 : 56\n",
+    "element - 4 : 32\n",
+    "Expected Output:\n",
+    "The Even elements are:\n",
+    "42 56 32\n",
+    "The Odd elements are :\n",
+    "25 47"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 24,
+   "id": "fe991cbd",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Please enter the count of element: 5\n",
+      " Enter element - 0: 25\n",
+      " Enter element - 1: 47\n",
+      " Enter element - 2: 42\n",
+      " Enter element - 3: 56\n",
+      " Enter element - 4: 32\n",
+      "\n",
+      " The Even Elements are :\n",
+      " [42, 56, 32]\n",
+      "\n",
+      " The Odd Elements are :\n",
+      " [25, 47]\n"
+     ]
+    }
+   ],
+   "source": [
+    "Test_Data = int(input(\"Please enter the count of element: \"))\n",
+    "even = []\n",
+    "odd  = []\n",
+    "for i in range(Test_Data):\n",
+    "    number = int(input(f\" Enter element - {i}: \"))\n",
+    "    if number % 2 == 0:\n",
+    "        even.append(number)\n",
+    "    else:\n",
+    "        odd.append(number)      \n",
+    "print(\"\\n The Even Elements are :\\n\", even)\n",
+    "print(\"\\n The Odd Elements are :\\n\", odd)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "cd7e1eb8",
+   "metadata": {},
+   "source": [
+    "# Question 5"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "69f1ba6a",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "Write a function inside(x,y,x1,y1,x2,y2) that returns True or False \n",
+    "depending on whether the point (x,y) lies in the rectangle with lower left corner (x1,y1) and upper right corner (x2,y2).\n",
+    ">>> inside(1,1,0,0,2,3)\n",
+    "True\n",
+    ">>> inside(-1,-1,0,0,2,3)\n",
+    "False\n",
+    "Use function inside() from part a. to write an expression that tests whether the point (1,1) \n",
+    "lies in both of the following rectangles: one with lower left corner (0.3, 0.5) and upper right corner (1.1, 0.7) \n",
+    "and the other with lower left corner (0.5, 0.2) and upper right corner (1.1, 2)."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 26,
+   "id": "3501e97e",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Please enter the value for x: -1\n",
+      "Please enter the value for y: -1\n",
+      "Please enter the value for x1: 0\n",
+      "Please enter the value for y1: 0\n",
+      "Please enter the value for x2: 2\n",
+      "Please enter the value for y2: 3\n",
+      "False\n",
+      "The point( -1.0 , -1.0 ) do not lie between the lower left point ( 0.0 , 0.0 ) and the upper right point ( 2.0 , 3.0 ) in the rectangle\n"
+     ]
+    }
+   ],
+   "source": [
+    "def inside(x, y, x1, y1, x2, y2):\n",
+    "    if x >= x1 and x <= x2 and y >= y1 and y <= y2:\n",
+    "        return True\n",
+    "    else:\n",
+    "        return False\n",
+    "x =  float(input(\"Please enter the value for x: \"))\n",
+    "y =  float(input(\"Please enter the value for y: \"))\n",
+    "x1 = float(input(\"Please enter the value for x1: \"))\n",
+    "y1 = float(input(\"Please enter the value for y1: \"))\n",
+    "x2 = float(input(\"Please enter the value for x2: \"))\n",
+    "y2 = float(input(\"Please enter the value for y2: \"))\n",
+    "print(inside(x, y, x1, y1, x2, y2))\n",
+    "if inside(x, y, x1, y1, x2, y2):\n",
+    "        print(\"The point(\",x,\",\",y,\") lies between the lower left point (\",x1,\",\", y1,\") and the upper right point (\",x2,\",\", y2,\") in the rectangle\")\n",
+    "else: \n",
+    "        print(\"The point(\",x,\",\",y,\") do not lie between the lower left point (\",x1,\",\", y1,\") and the upper right point (\",x2,\",\", y2,\") in the rectangle\")\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "5acb65ed",
+   "metadata": {},
+   "source": [
+    "# Question 6"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "37dec712",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "You can turn a word into pig-Latin using the following two rules (simplified):\n",
+    "If the word starts with a consonant, move that letter to the end and append 'ay'.\n",
+    "For example, 'happy' becomes 'appyhay' and 'pencil' becomes 'encilpay'.\n",
+    "If the word starts with a vowel, simply append 'way' to the end of the word.\n",
+    "For example, 'enter' becomes 'enterway' and 'other' becomes 'otherway' . \n",
+    "For our purposes, there are 5 vowels: a, e, i, o, u (so we count y as a consonant).\n",
+    "Write a function pig() that takes a word (i.e., a string) as input and returns its pig-Latin form. \n",
+    "Your function should still work if the input word contains upper case characters. \n",
+    "Your output should always be lower case however.\n",
+    ">>> pig('happy')\n",
+    "'appyhay'\n",
+    ">>> pig('Enter')\n",
+    "'enterway'"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 27,
+   "id": "d9c4a946",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Enter the word starts from a consonant: happy\n",
+      "Enter the word starts from a vowel: Enter\n",
+      "\n",
+      "The pig_latin word for  happy  is  appyhay\n",
+      "The pig_latin word for  Enter  is  enterway\n"
+     ]
+    }
+   ],
+   "source": [
+    "def pig(word):\n",
+    "    vowels = ['a', 'e', 'i', 'o', 'u']\n",
+    "    word = word.lower()\n",
+    "    \n",
+    "    if word[0] in vowels:\n",
+    "        pig_latin = word + 'way'\n",
+    "    else:\n",
+    "        pig_latin = word[1:] + word[0] + 'ay'\n",
+    "        \n",
+    "    return pig_latin\n",
+    "\n",
+    "Consonant_output = str(input(\"Enter the word starts from a consonant: \"))\n",
+    "Vowels_output = str(input(\"Enter the word starts from a vowel: \"))\n",
+    "\n",
+    "print(\"\\nThe pig_latin word for \",Consonant_output,\" is \",pig(Consonant_output))\n",
+    "print(\"The pig_latin word for \",Vowels_output,\" is \",pig(Vowels_output))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "638db75f",
+   "metadata": {},
+   "source": [
+    "# Question 7"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "c3dfeb0e",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "File bloodtype1.txt records blood-types of patients (A, B, AB, O or OO) at a clinic.\n",
+    "Write a function bldcount() that reads the file with name name and reports (i.e., prints)\n",
+    "how many patients there are in each bloodtype.\n",
+    ">>> bldcount('bloodtype.txt')\n",
+    "There are 10 patients of blood type A.\n",
+    "There is one patient of blood type B.\n",
+    "There are 10 patients of blood type AB.\n",
+    "There are 12 patients of blood type O.\n",
+    "There are no patients of blood type OO."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 47,
+   "id": "9ffaaa94",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "There are 15 patients with blood group A\n",
+      "There are 1 patients with blood group B\n",
+      "There are 13 patients with blood group AB\n",
+      "There are 15 patients with blood group O\n",
+      "There are 0 patients with blood group OO\n"
+     ]
+    }
+   ],
+   "source": [
+    "#f = open(\"bloodtype1.txt\", \"r\")\n",
+    "#get_data = f.read()\n",
+    "get_data = \"AB AB B O A A AB O AB A O O A A A O O O AB O A A A A A AB AB A AB O AB O A O O O AB O AB AB AB A A O\"\n",
+    "get_count = 0\n",
+    "covert_array = get_data.split()\n",
+    "base_data = ['A','B','AB','O','OO']\n",
+    "for x in base_data:\n",
+    "    get_count = covert_array.count(x)\n",
+    "    print(\"There are {0} patients with blood group {1}\".format(get_count,x))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "c5d50189",
+   "metadata": {},
+   "source": [
+    "# Question 8"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "5e11455a",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "Write a function curconv() that takes as input:\n",
+    "a currency represented using a string (e.g., 'JPY' for the Japanese Yen or 'EUR' for the Euro)\n",
+    "an amount\n",
+    "and then converts and returns the amount in US dollars.\n",
+    ">>> curconv('EUR', 100)\n",
+    "122.96544\n",
+    ">>> curconv('JPY', 100)\n",
+    "1.241401\n",
+    "The currency rates you will need are stored in file currencies.txt:\n",
+    "AUD 1.0345157 Australian Dollar\n",
+    "CHF 1.0237414 Swiss Franc\n",
+    "CNY 0.1550176 Chinese Yuan\n",
+    "DKK 0.1651442 Danish Krone\n",
+    "EUR 1.2296544 Euro\n",
+    "GBP 1.5550989 British Pound\n",
+    "HKD 0.1270207 Hong Kong Dollar\n",
+    "INR 0.0177643 Indian Rupee\n",
+    "JPY 0.01241401 Japanese Yen\n",
+    "MXN 0.0751848 Mexican Peso\n",
+    "MYR 0.3145411 Malaysian Ringgit\n",
+    "NOK 0.1677063 Norwegian Krone\n",
+    "NZD 0.8003591 New Zealand Dollar\n",
+    "PHP 0.0233234 Philippine Peso\n",
+    "SEK 0.148269 Swedish Krona\n",
+    "SGD 0.788871 Singapore Dollar\n",
+    "THB 0.0313789 Thai Baht"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 31,
+   "id": "c3103b14",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Enter Currency\n",
+      "SGD\n",
+      "Enter Value\n",
+      "500\n",
+      "394.4355\n"
+     ]
+    }
+   ],
+   "source": [
+    "def curcov(curr_input,val_input):\n",
+    "    #f = open(\"currencies.txt\", \"r\") \n",
+    "    #get_data = f.read()\n",
+    "    split_data = ['AUD', '1.0345157', 'Australian', 'Dollar', 'CHF', '1.0237414', 'Swiss', 'Franc', 'CNY', \n",
+    "                  '0.1550176', 'Chinese', 'Yuan', 'DKK', '0.1651442', 'Danish', 'Krone', 'EUR', '1.2296544', \n",
+    "                  'Euro', 'GBP', '1.5550989', 'British', 'Pound', 'HKD', '0.1270207', 'Hong', 'Kong', 'Dollar', \n",
+    "                  'INR', '0.0177643', 'Indian', 'Rupee', 'JPY', '0.01241401', 'Japanese', 'Yen', 'MXN', '0.0751848', \n",
+    "                  'Mexican', 'Peso', 'MYR', '0.3145411', 'Malaysian', 'Ringgit', 'NOK', '0.1677063', 'Norwegian', 'Krone', \n",
+    "                  'NZD', '0.8003591', 'New', 'Zealand', 'Dollar', 'PHP', '0.0233234', 'Philippine', 'Peso', 'SEK', '0.148269', \n",
+    "                  'Swedish', 'Krona', 'SGD', '0.788871', 'Singapore', 'Dollar', 'THB', '0.0313789', 'Thai', 'Baht']\n",
+    "    #split_data = get_data.split()\n",
+    "    get_index = split_data.index(curr_input)\n",
+    "    conv_value = split_data[get_index+1]\n",
+    "    calculate = float(conv_value) * float(val_input)\n",
+    "    print(calculate)\n",
+    "\n",
+    "print(\"Enter Currency\")\n",
+    "curr_input = input()\n",
+    "print(\"Enter Value\")\n",
+    "val_input = input()\n",
+    "curcov(curr_input,val_input)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d235d394",
+   "metadata": {},
+   "source": [
+    "# Question 9"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "5864f12d",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "Each of the following will cause an exception (an error). Identify what type of exception each will cause.\n",
+    "Trying to add incompatible variables, as inadding6 + ‘a’\n",
+    "Referring to the 12th item of a list that has only 10items\n",
+    "Using a value that is out of range for a function’sinput, such as callingmath.sqrt(-1.0)\n",
+    "Using an undeclared variable, such asprint(x) when x has not been defined\n",
+    "Trying to open a file that does not exist, such asmistyping the file name or looking in the wrongdirectory."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 32,
+   "id": "7e142981",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "TypeError",
+     "evalue": "unsupported operand type(s) for +: 'int' and 'str'",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[1;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[1;31mTypeError\u001b[0m                                 Traceback (most recent call last)",
+      "Cell \u001b[1;32mIn[32], line 1\u001b[0m\n\u001b[1;32m----> 1\u001b[0m XYZ \u001b[38;5;241m=\u001b[39m \u001b[38;5;241m6\u001b[39m\u001b[38;5;241m+\u001b[39m\u001b[38;5;124m'\u001b[39m\u001b[38;5;124ma\u001b[39m\u001b[38;5;124m'\u001b[39m\n\u001b[0;32m      2\u001b[0m \u001b[38;5;28mprint\u001b[39m\u001b[38;5;241m=\u001b[39mXYZ\n",
+      "\u001b[1;31mTypeError\u001b[0m: unsupported operand type(s) for +: 'int' and 'str'"
+     ]
+    }
+   ],
+   "source": [
+    "XYZ = 6+'a'\n",
+    "print=XYZ"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 33,
+   "id": "6539a300",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "IndexError",
+     "evalue": "list index out of range",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[1;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[1;31mIndexError\u001b[0m                                Traceback (most recent call last)",
+      "Cell \u001b[1;32mIn[33], line 2\u001b[0m\n\u001b[0;32m      1\u001b[0m XYZ \u001b[38;5;241m=\u001b[39m [\u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mAAA\u001b[39m\u001b[38;5;124m\"\u001b[39m, \u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mBBB\u001b[39m\u001b[38;5;124m\"\u001b[39m, \u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mCCC\u001b[39m\u001b[38;5;124m\"\u001b[39m, \u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mDDD\u001b[39m\u001b[38;5;124m\"\u001b[39m, \u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mEEE\u001b[39m\u001b[38;5;124m\"\u001b[39m, \u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mFFF\u001b[39m\u001b[38;5;124m\"\u001b[39m, \u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mGGG\u001b[39m\u001b[38;5;124m\"\u001b[39m, \u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mHHH\u001b[39m\u001b[38;5;124m\"\u001b[39m, \u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mIII\u001b[39m\u001b[38;5;124m\"\u001b[39m, \u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mJJJ\u001b[39m\u001b[38;5;124m\"\u001b[39m]\n\u001b[1;32m----> 2\u001b[0m \u001b[38;5;28mprint\u001b[39m(XYZ[\u001b[38;5;241m12\u001b[39m])\n",
+      "\u001b[1;31mIndexError\u001b[0m: list index out of range"
+     ]
+    }
+   ],
+   "source": [
+    "XYZ = [\"AAA\", \"BBB\", \"CCC\", \"DDD\", \"EEE\", \"FFF\", \"GGG\", \"HHH\", \"III\", \"JJJ\"]\n",
+    "print(XYZ[12])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 34,
+   "id": "ebbbc80e",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "ValueError",
+     "evalue": "math domain error",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[1;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[1;31mValueError\u001b[0m                                Traceback (most recent call last)",
+      "Cell \u001b[1;32mIn[34], line 2\u001b[0m\n\u001b[0;32m      1\u001b[0m \u001b[38;5;28;01mimport\u001b[39;00m \u001b[38;5;21;01mmath\u001b[39;00m\n\u001b[1;32m----> 2\u001b[0m result \u001b[38;5;241m=\u001b[39m math\u001b[38;5;241m.\u001b[39msqrt(\u001b[38;5;241m-\u001b[39m\u001b[38;5;241m1.0\u001b[39m)\n\u001b[0;32m      3\u001b[0m \u001b[38;5;28mprint\u001b[39m()\n",
+      "\u001b[1;31mValueError\u001b[0m: math domain error"
+     ]
+    }
+   ],
+   "source": [
+    "import math\n",
+    "result = math.sqrt(-1.0)\n",
+    "print()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 37,
+   "id": "a5164fc0",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "SyntaxError",
+     "evalue": "invalid syntax (1707279798.py, line 1)",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[1;36m  Cell \u001b[1;32mIn[37], line 1\u001b[1;36m\u001b[0m\n\u001b[1;33m    Cell In[55], line 7\u001b[0m\n\u001b[1;37m         ^\u001b[0m\n\u001b[1;31mSyntaxError\u001b[0m\u001b[1;31m:\u001b[0m invalid syntax\n"
+     ]
+    }
+   ],
+   "source": [
+    "Cell In[55], line 7\n",
+    "      1 # 4. Using an undeclared variable\n",
+    "----> 2 print(x)\n",
+    "      3 print()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 38,
+   "id": "0aac0380",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "SyntaxError",
+     "evalue": "invalid syntax (130028735.py, line 1)",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[1;36m  Cell \u001b[1;32mIn[38], line 1\u001b[1;36m\u001b[0m\n\u001b[1;33m    Cell In[90], line 20\u001b[0m\n\u001b[1;37m         ^\u001b[0m\n\u001b[1;31mSyntaxError\u001b[0m\u001b[1;31m:\u001b[0m invalid syntax\n"
+     ]
+    }
+   ],
+   "source": [
+    "Cell In[90], line 20\n",
+    "      1 # 5. Trying to open a file that does not exist\n",
+    "----> 2 file = open('nonexistent_file.txt', 'r')\n",
+    "      3 print()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "10b8a93d",
+   "metadata": {},
+   "source": [
+    "\n",
+    "# Question 10"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "63741f30",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "Encryption is the process of hiding the meaning of a text by substituting letters in the message with other letters,\n",
+    "according to some system. If the process is successful, no one but the intended recipient can understand the encrypted message.\n",
+    "Cryptanalysis refers to attempts to undo the encryption, even if some details of the encryption are unknown\n",
+    "(for example, if an encrypted message has been intercepted). \n",
+    "The first step of cryptanalysis is often to build up a table of letter frequencies in the encrypted text. \n",
+    "Assume that the string letters is already defined as 'abcdefghijklmnopqrstuvwxyz'. \n",
+    "Write a function called frequencies() that takes a string as its only parameter, and returns a list of integers,\n",
+    "showing the number of times each character appears in the text.\n",
+    "Your function may ignore any characters that are not in letters.\n",
+    "\n",
+    ">>> frequencies('The quick red fox got bored and went home.')\n",
+    "\n",
+    "[1, 1, 1, 3, 5, 1, 1, 2, 1, 0, 1, 0, 1, 2, 4, 0, 1, 2, 0, 2, 1, 0, 1, 1, 0, 0]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 46,
+   "id": "e613bb9a",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Enter any String : 'The quick red fox got bored and went home.'\n",
+      "[1, 1, 1, 3, 5, 1, 1, 2, 1, 0, 1, 0, 1, 2, 4, 0, 1, 2, 0, 3, 1, 0, 1, 1, 0, 0]\n"
+     ]
+    }
+   ],
+   "source": [
+    "def frequencies(text):\n",
+    "    characters = 'abcdefghijklmnopqrstuvwxyz'\n",
+    "    characters_count = [0] * 26\n",
+    "    lower_text = text.lower()\n",
+    "    for char in lower_text:\n",
+    "        if char in characters:\n",
+    "            index = characters.index(char)\n",
+    "            characters_count[index] += 1\n",
+    "    return characters_count\n",
+    "encrypted_text = str(input(\"Enter any String : \"))\n",
+    "letters = [chr(i) for i in range(ord('a'), ord('z') + 1)]\n",
+    "output = frequencies(encrypted_text)\n",
+    "print(output)"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.11.4"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
